@@ -9,6 +9,7 @@ import android.view.*
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.inflationcalculator.R
@@ -19,6 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
+    lateinit var menu: Menu
     private var number = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,13 +40,13 @@ class HomeFragment : Fragment() {
             container, false
         )
 
-        binding.toolbar.inflateMenu(R.menu.menu_main)
         val listener = View.OnClickListener { view ->
             val button = view as Button
             binding.initialAmountEditText.append(button.text.toString())
             number += button.text.toString()
             Log.d("Home Fragment", number)
         }
+
 
         binding.apply {
             invalidateAll()
@@ -79,8 +81,6 @@ class HomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_main, menu)
-        val menuItem = menu.getItem(0)
-        SpannableString(menuItem.title).setSpan(ForegroundColorSpan(Color.WHITE), 0, 5, 0)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
@@ -93,6 +93,12 @@ class HomeFragment : Fragment() {
                 Toast.makeText(activity, "about button clicked", Toast.LENGTH_LONG).show()
                 binding.bottomSheetLayout
                 return true
+            }
+            R.id.currency_menu -> {
+                menu.getItem(0).icon = ContextCompat.getDrawable(context!!, R.drawable.ic_forward);
+                Toast.makeText(activity, "about button clicked", Toast.LENGTH_LONG).show()
+
+               return true
             }
             else -> super.onOptionsItemSelected(item)
 

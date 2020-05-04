@@ -4,6 +4,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about">About</string>
+    <string name="currency">Currency</string>
     <string name="us_dollar">US Dollar</string>
     <string name="amount">Amount</string>
     <string name="one">1</string>
@@ -19,5 +20,8 @@
     <string name="seven">7</string>
     <string name="zero">0</string>
     <string name="current">Current</string>
-    <string name="pick_year">pick year</string>
+    <string name="initial_year">Initial year</string>
+    <string name="final_year">Final year</string>
+    <string name="compute">Compute</string>
+
 </resources>

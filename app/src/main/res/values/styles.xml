@@ -8,8 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="CustomMenuItem" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:textAlignment">center</item>
+    <style name="CustomMenuItem" >
         <item name="textAllCaps">false</item>
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="fontFamily">@font/source_sans_pro_regular</item>
@@ -21,4 +20,5 @@
         <item name="fontFamily">@font/source_sans_pro_semi_bold</item>
         <item name="android:textAlignment">center</item>
     </style>
+
 </resources>
