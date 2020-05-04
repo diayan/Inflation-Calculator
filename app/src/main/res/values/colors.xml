@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008543</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#48D2B9</color>
+    <color name="colorAccentOpaque">#2a686c</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTransparent">@android:color/transparent</color>
+    <color name="colorFacebook">#3B5998</color>
+    <color name="colorTwitter">#2C6E91</color>
+    <color name="colorThistle">#D0C9D6</color>
+    <color name="colorImageSelect">#9948d2b9</color>
+    <color name="colorTangaroa">#142736</color>
+    <color name="colorDivider">#e6e6e6</color>
+    <color name="colorTeal">#3348d2b9</color>
+    <color name="light_grey">#D7D7D7</color>
+</resources>
