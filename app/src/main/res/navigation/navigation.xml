@@ -8,5 +8,10 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.inflationcalculator.fragment.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.inflationcalculator.fragment.AboutFragment"
+        android:label="AboutFragment" />
 </navigation>

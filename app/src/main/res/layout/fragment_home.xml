@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/main_color">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/main_color"
             tools:context=".fragment.HomeFragment">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
-                android:theme="@style/CustomMenuItem"
-                android:background="@color/colorPrimary"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:title="@string/app_name"
-                app:titleTextAppearance="@style/Toolbar.TitleText"
-                app:titleTextColor="@android:color/white"
-                tools:menu="@menu/menu_main" />
             <!--
 
                         <FrameLayout
@@ -85,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/toolbar">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:id="@+id/input_container"
@@ -369,30 +352,4 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
-            android:id="@+id/bottom_sheet_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/bottom_sheet"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="8dp"
-            android:visibility="gone"
-            app:behavior_hideable="true"
-            app:layout_behavior="@string/bottom_sheet_behavior">
-
-            <ImageView
-                android:id="@+id/bottom_sheet_arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="20dp"
-                android:src="@drawable/icn_chevron_up" />
-        </LinearLayout>
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
