@@ -1,23 +1,20 @@
-package com.example.inflationcalculator.fragment
+package com.example.inflationcalculator.home
 
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.Button
-import android.widget.Toast
-import android.widget.Toolbar
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.example.inflationcalculator.R
 import com.example.inflationcalculator.databinding.FragmentHomeBinding
 import com.example.inflationcalculator.utill.Utill
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     private var number = ""
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,6 +68,11 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+    }
 
 /*    private fun bottomSheetGestureDetection() {
      val sheetBehavior = BottomSheetBehavior.from(binding.bottomSheetLayout)

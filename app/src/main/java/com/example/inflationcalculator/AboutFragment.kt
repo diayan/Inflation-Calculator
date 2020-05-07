@@ -1,4 +1,4 @@
-package com.example.inflationcalculator.fragment
+package com.example.inflationcalculator
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
