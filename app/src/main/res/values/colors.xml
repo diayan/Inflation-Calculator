@@ -14,4 +14,5 @@
     <color name="colorDivider">#e6e6e6</color>
     <color name="colorTeal">#3348d2b9</color>
     <color name="light_grey">#D7D7D7</color>
+    <color name="main_color">#101532</color>
 </resources>

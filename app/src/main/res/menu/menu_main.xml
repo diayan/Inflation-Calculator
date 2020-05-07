@@ -3,8 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/currency_menu"
+        android:title="@string/currency"
+        android:visible="true"
+        android:icon="@drawable/ic_currency"
+        app:showAsAction="always"/>
+
+    <item
         android:id="@+id/about_menu"
         android:title="@string/about"
         android:visible="true"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
+
+
 </menu>
