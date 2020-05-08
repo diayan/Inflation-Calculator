@@ -14,20 +14,34 @@
         android:id="@+id/title_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Select Currency"
+        android:text="@string/sources"
         android:textSize="20sp"
         android:textColor="@android:color/black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:fontFamily="@font/source_sans_pro_semi_bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/subtitle_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/historical_inflation_data_is_compiled_from_various_official_sources"
+        android:textSize="18sp"
+        android:textColor="@android:color/darker_gray"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:fontFamily="@font/source_sans_pro_regular"
+        app:layout_constraintStart_toStartOf="@id/title_textView"
+        app:layout_constraintEnd_toEndOf="@id/title_textView"
+        app:layout_constraintTop_toBottomOf="@id/title_textView"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bottom_sheet"
-        tools:listitem="@layout/layout_currency_item"
-        app:layout_constraintTop_toBottomOf="@id/title_textView"/>
+        tools:listitem="@layout/layout_about_item"
+        app:layout_constraintTop_toBottomOf="@id/subtitle_textView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
