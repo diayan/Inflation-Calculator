@@ -7,6 +7,8 @@ import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.inflationcalculator.R
 import com.example.inflationcalculator.databinding.FragmentHomeBinding
 import com.example.inflationcalculator.utill.Utill
@@ -18,6 +20,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     @ExperimentalStdlibApi
@@ -62,16 +65,28 @@ class HomeFragment : Fragment() {
         }
 
         binding.initialAmountEditText.setOnClickListener {
-            Utill.hideKeyboardFrom(context!!, binding.initialAmountEditText) }
+            Utill.hideKeyboardFrom(context!!, binding.initialAmountEditText)
+        }
         //bottomSheetGestureDetection()
-
         return binding.root
     }
-
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_main, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(
+            item,
+            view!!.findNavController()
+        )
+                || super.onOptionsItemSelected(item)
     }
 
 /*    private fun bottomSheetGestureDetection() {

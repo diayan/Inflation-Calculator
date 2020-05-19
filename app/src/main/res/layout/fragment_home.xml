@@ -1,354 +1,354 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/main_color"
-            tools:context=".home.HomeFragment">
-            <!--
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_color"
+        tools:context=".home.HomeFragment">
 
-                        <FrameLayout
-                            android:id="@+id/header_container"
+        <!--
+
+                    <FrameLayout
+                        android:id="@+id/header_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorPrimary"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/filter_bar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="?attr/colorPrimary"
-                            android:paddingLeft="12dp"
-                            android:paddingRight="12dp"
-                            android:paddingBottom="12dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
+                            android:elevation="8dp">
 
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/filter_bar"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:elevation="8dp">
+                                android:background="?attr/colorPrimary"
+                                android:gravity="center"
+                                android:orientation="horizontal">
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/currency_imageView"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@drawable/ic_currency"
+                                    app:civ_circle_background_color="@android:color/white" />
+
+                                <TextView
+                                    android:id="@+id/currency_name_textView"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="?attr/colorPrimary"
-                                    android:gravity="center"
-                                    android:orientation="horizontal">
+                                    android:drawableEnd="@drawable/ic_forward"
+                                    android:drawablePadding="-2dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="4dp"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="0dp"
+                                    android:paddingBottom="4dp"
+                                    android:text="@string/us_dollar"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </FrameLayout>
+        -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-                                    <de.hdodenhof.circleimageview.CircleImageView
-                                        android:id="@+id/currency_imageView"
-                                        android:layout_width="32dp"
-                                        android:layout_height="32dp"
-                                        android:src="@drawable/ic_currency"
-                                        app:civ_circle_background_color="@android:color/white" />
-
-                                    <TextView
-                                        android:id="@+id/currency_name_textView"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:drawableEnd="@drawable/ic_forward"
-                                        android:drawablePadding="-2dp"
-                                        android:gravity="center_vertical"
-                                        android:paddingStart="4dp"
-                                        android:paddingTop="4dp"
-                                        android:paddingEnd="0dp"
-                                        android:paddingBottom="4dp"
-                                        android:text="@string/us_dollar"
-                                        android:textColor="@android:color/white"
-                                        android:textSize="24sp"
-                                        android:textStyle="bold" />
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
-                        </FrameLayout>
-            -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:id="@+id/input_container"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="@id/button6"
-                    app:layout_constraintStart_toStartOf="@+id/button1"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <EditText
-                        android:id="@+id/initialAmount_editText"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="4dp"
-                        android:layout_weight="0.5"
-                        android:background="@drawable/borderless_button"
-                        android:fontFamily="@font/source_sans_pro_regular"
-                        android:hint="@string/amount"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@android:color/white"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/inflated_textView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_weight="0.5"
-                        android:background="@drawable/rounded_button"
-                        android:fontFamily="@font/source_sans_pro_regular"
-                        android:hint="@string/current"
-                        android:maxLines="1"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@color/colorWhite"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/button0"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/zero"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@id/button9"
-                    app:layout_constraintStart_toEndOf="@+id/button9" />
-
-                <Button
-                    android:id="@+id/button7"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/seven"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/button8"
-                    app:layout_constraintStart_toStartOf="@+id/button1" />
-
-                <Button
-                    android:id="@+id/button8"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/eight"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/button9"
-                    app:layout_constraintStart_toEndOf="@+id/button7" />
-
-                <Button
-                    android:id="@+id/button9"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/nine"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintStart_toEndOf="@+id/button8"
-                    app:layout_constraintTop_toBottomOf="@+id/button6" />
-
-                <Button
-                    android:id="@+id/button4"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/four"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/button3"
-                    app:layout_constraintStart_toEndOf="@+id/button3" />
-
-                <Button
-                    android:id="@+id/button5"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/five"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/button4"
-                    app:layout_constraintStart_toEndOf="@+id/button4" />
-
-                <Button
-                    android:id="@+id/button6"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/six"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/button5"
-                    app:layout_constraintStart_toEndOf="@+id/button5" />
-
-                <Button
-                    android:id="@+id/button1"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/one"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-                    app:layout_constraintEnd_toStartOf="@+id/button2" />
-
-                <Button
-                    android:id="@+id/button2"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/two"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/button3"
-                    app:layout_constraintEnd_toStartOf="@+id/button3" />
-
-                <Button
-                    android:id="@+id/button3"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:background="@color/colorTwitter"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/three"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.41"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/input_container" />
-
-                <Button
-                    android:id="@+id/buttonDot"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:background="@color/colorTangaroa"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/dot"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/button0"
-                    app:layout_constraintStart_toEndOf="@+id/button0" />
-
-                <Button
-                    android:id="@+id/deleteButton"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:background="@color/colorTangaroa"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:minWidth="48dp"
-                    android:text="@string/delete"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/buttonDot"
-                    app:layout_constraintStart_toEndOf="@id/buttonDot" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="24dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/deleteButton"
-                    app:layout_constraintStart_toStartOf="@+id/button7"
-                    app:layout_constraintTop_toBottomOf="@id/deleteButton">
-
-                    <TextView
-                        android:id="@+id/startDate_textView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="4dp"
-                        android:layout_weight="0.5"
-                        android:background="@drawable/borderless_button"
-                        android:fontFamily="@font/source_sans_pro_regular"
-                        android:hint="@string/initial_year"
-                        android:maxLines="1"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@color/colorWhite"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/currentDate_textView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_weight="0.5"
-                        android:background="@drawable/rounded_button"
-                        android:fontFamily="@font/source_sans_pro_regular"
-                        android:hint="@string/final_year"
-                        android:maxLines="1"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@color/colorWhite"
-                        android:textSize="18sp"/>
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <Button
-                android:id="@+id/button"
+            <LinearLayout
+                android:id="@+id/input_container"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/borderless_button"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/button6"
+                app:layout_constraintStart_toStartOf="@+id/button1"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/initialAmount_editText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/borderless_button"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:hint="@string/amount"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/inflated_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:hint="@string/current"
+                    android:maxLines="1"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button0"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorTwitter"
                 android:fontFamily="@font/source_sans_pro_regular"
-                android:padding="20dp"
-                android:paddingBottom="22dp"
-                android:text="@string/compute"
-                android:textAllCaps="false"
+                android:minWidth="48dp"
+                android:text="@string/zero"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@id/button9"
+                app:layout_constraintStart_toEndOf="@+id/button9" />
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/seven"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button8"
+                app:layout_constraintStart_toStartOf="@+id/button1" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/eight"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button9"
+                app:layout_constraintStart_toEndOf="@+id/button7" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/nine"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toEndOf="@+id/button8"
+                app:layout_constraintTop_toBottomOf="@+id/button6" />
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/four"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button3"
+                app:layout_constraintStart_toEndOf="@+id/button3" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/five"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+                app:layout_constraintStart_toEndOf="@+id/button4" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/six"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button5"
+                app:layout_constraintStart_toEndOf="@+id/button5" />
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/one"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button2"
+                app:layout_constraintEnd_toStartOf="@+id/button2" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/two"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button3"
+                app:layout_constraintEnd_toStartOf="@+id/button3" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@color/colorTwitter"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/three"
+                android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintHorizontal_bias="0.41"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_container" />
+
+            <Button
+                android:id="@+id/buttonDot"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorTangaroa"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/dot"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button0"
+                app:layout_constraintStart_toEndOf="@+id/button0" />
+
+            <Button
+                android:id="@+id/deleteButton"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorTangaroa"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:minWidth="48dp"
+                android:text="@string/delete"
+                android:textColor="@android:color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/buttonDot"
+                app:layout_constraintStart_toEndOf="@id/buttonDot" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/deleteButton"
+                app:layout_constraintStart_toStartOf="@+id/button7"
+                app:layout_constraintTop_toBottomOf="@id/deleteButton">
+
+                <TextView
+                    android:id="@+id/startDate_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/borderless_button"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:hint="@string/initial_year"
+                    android:maxLines="1"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/currentDate_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:hint="@string/final_year"
+                    android:maxLines="1"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="18sp" />
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borderless_button"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:padding="20dp"
+            android:paddingBottom="22dp"
+            android:text="@string/compute"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
