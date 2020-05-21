@@ -23,5 +23,7 @@
     <string name="initial_year">Initial year</string>
     <string name="final_year">Final year</string>
     <string name="compute">Compute</string>
+    <string name="historical_inflation_data_is_compiled_from_various_official_sources">Historical inflation data is compiled from various official sources</string>
+    <string name="sources">Sources</string>
 
 </resources>

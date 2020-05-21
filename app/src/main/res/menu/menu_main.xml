@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/currency_menu"
-        android:title="@string/currency"
-        android:visible="true"
-        android:icon="@drawable/ic_currency"
-        app:showAsAction="always"/>
-
-    <item
-        android:id="@+id/about_menu"
+        android:id="@+id/aboutFragment"
         android:title="@string/about"
         android:visible="true"
         app:showAsAction="ifRoom" />
-
-
 </menu>
