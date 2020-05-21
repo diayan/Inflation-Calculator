@@ -11,6 +11,6 @@
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.inflationcalculator.AboutFragment"
+        android:name="com.example.inflationcalculator.about.AboutFragment"
         android:label="AboutFragment" />
 </navigation>

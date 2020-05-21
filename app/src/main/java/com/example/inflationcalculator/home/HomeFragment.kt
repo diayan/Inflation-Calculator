@@ -12,6 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import com.example.inflationcalculator.R
 import com.example.inflationcalculator.databinding.FragmentHomeBinding
 import com.example.inflationcalculator.utill.Utill
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
@@ -41,6 +42,9 @@ class HomeFragment : Fragment() {
             Log.d("Home Fragment", number)
         }
 
+        binding.currencyNameTextView.setOnClickListener {
+
+        }
         binding.apply {
             invalidateAll()
             button0.setOnClickListener(listener)
@@ -89,42 +93,4 @@ class HomeFragment : Fragment() {
                 || super.onOptionsItemSelected(item)
     }
 
-/*    private fun bottomSheetGestureDetection() {
-     val sheetBehavior = BottomSheetBehavior.from(binding.bottomSheetLayout)
-     val vto = binding.bottomSheetLayout.viewTreeObserver
-
-     vto.addOnGlobalLayoutListener(
-         object : ViewTreeObserver.OnGlobalLayoutListener {
-             override fun onGlobalLayout() {
-                 binding.bottomSheetLayout.viewTreeObserver.removeOnGlobalLayoutListener(this)
-                 //                int width = bottomSheetLayout.getMeasuredWidth();
-                 val height = binding.bottomSheetLayout.measuredHeight
-                 sheetBehavior.peekHeight =
-                     height
-             }
-         })
-     sheetBehavior.isHideable = true
-     sheetBehavior.setBottomSheetCallback(
-         object : BottomSheetBehavior.BottomSheetCallback() {
-             override fun onSlide(p0: View, p1: Float) {}
-
-             override fun onStateChanged(bottomSheet: View, newState: Int) {
-                 when (newState) {
-                     BottomSheetBehavior.STATE_EXPANDED -> {
-                         binding.bottomSheetLayout.bottomSheetArrow.setImageResource(R.drawable.icn_chevron_down)
-                     }
-                     BottomSheetBehavior.STATE_HIDDEN -> {
-                     }
-                     BottomSheetBehavior.STATE_COLLAPSED -> {
-                         binding.bottomSheetLayout.bottomSheetArrow.setImageResource(R.drawable.icn_chevron_up)
-                     }
-                     BottomSheetBehavior.STATE_DRAGGING -> {
-                     }
-                     BottomSheetBehavior.STATE_SETTLING -> binding.bottomSheetLayout.bottomSheetArrow.setImageResource(
-                         R.drawable.icn_chevron_up
-                     )
-                 }
-             }
-         })
- }*/
 }

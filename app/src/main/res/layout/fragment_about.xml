@@ -8,7 +8,7 @@
         android:paddingStart="16dp"
         android:paddingTop="16dp"
         android:paddingEnd="16dp"
-        tools:context="com.example.inflationcalculator.AboutFragment">
+        tools:context="com.example.inflationcalculator.about.AboutFragment">
 
         <TextView
             android:id="@+id/title_textView"
