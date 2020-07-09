@@ -25,5 +25,7 @@
     <string name="compute">Compute</string>
     <string name="historical_inflation_data_is_compiled_from_various_official_sources">Historical inflation data is compiled from various official sources</string>
     <string name="sources">Sources</string>
+    <string name="current_year">2020</string>
+    <string name="earlier_year">1992</string>
 
 </resources>
