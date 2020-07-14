@@ -24,6 +24,12 @@ android {
         }
     }
 
+    //fix invoke-customs are only supported starting with android O error
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     dataBinding {
         enabled = true
     }
@@ -50,5 +56,19 @@ dependencies {
     implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0"
     implementation "android.arch.navigation:navigation-ui-ktx:1.0.0"
 
+    //retrofit with moshi converter
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
+
+    // Retrofit Coroutines Support
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$version_retrofit_coroutines_adapter"
+
+    //moshi
+    implementation "com.squareup.moshi:moshi:$version_moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_kotlin_coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_kotlin_coroutines"
 
 }

@@ -1,6 +1,6 @@
 package com.example.inflationcalculator.data
 
-data class HistoricalDataSource(
+data class HistoricalDataSources(
     val id: String,
     val currencyName: String,
     val flag: String,

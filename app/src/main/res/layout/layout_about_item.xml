@@ -2,8 +2,8 @@
 <layout>
     <data>
         <variable
-            name="historicalDataSource"
-            type="com.example.inflationcalculator.data.HistoricalDataSource" />
+            name="historicalDataSources"
+            type="com.example.inflationcalculator.data.HistoricalDataSources" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
