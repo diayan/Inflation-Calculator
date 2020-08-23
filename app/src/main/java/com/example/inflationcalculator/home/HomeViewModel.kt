@@ -10,10 +10,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import okhttp3.MediaType
-import okhttp3.RequestBody
-import org.json.JSONArray
-import org.json.JSONObject
 
 class HomeViewModel : ViewModel() {
 
@@ -22,19 +18,35 @@ class HomeViewModel : ViewModel() {
     val historicalInflationData: LiveData<List<HistoricalInflationData>>
         get() = _historicalInflationData
 
+
+    init {
+        getInflationData()
+    }
+
     //coroutine scope using job to be able to cancel
     private var viewModelJob = Job()
 
     //coroutine runs using the main ui dispatcher
     private val coroutineScope = CoroutineScope((viewModelJob + Dispatchers.Main))
 
-    fun getInflationData() {
+    private val requestBody = HistoricalInflationData(
+        seriesId = arrayOf("LAUCN040010000000005", "LAUCN040010000000006"),
+        startYear = "2010",
+        endYear = "2012",
+        catalog = false,
+        calculations = true,
+        annualaverage = true,
+        registrationkey = "b1f1dcdbd7084397b28f760811d79e2d"
+    )
+
+    private fun getInflationData() {
         coroutineScope.launch {
             val getInflationDataDeferred =
                 InflationApi.retrofitService.getInflationData(requestBody)
             try {
                 val listResult = getInflationDataDeferred.await()
                 _historicalInflationData.value = listResult
+                Log.d("Historical data", listResult.toString())
             } catch (e: Exception) {
                 _historicalInflationData.value = ArrayList()
             }
@@ -42,7 +54,7 @@ class HomeViewModel : ViewModel() {
     }
 
 
-    val requestBody = RequestBody.create(
+/*    val requestBody = RequestBody.create(
         MediaType.parse("application/json"),
         getJsonObject("CUUR0000SA0", "2000", "2020").toString()
     )
@@ -66,5 +78,6 @@ class HomeViewModel : ViewModel() {
         Log.d("Params", jsonObject.toString())
 
         return jsonObject
-    }
+    }*/
+
 }

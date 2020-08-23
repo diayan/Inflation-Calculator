@@ -6,13 +6,13 @@ import android.view.*
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.inflationcalculator.R
 import com.example.inflationcalculator.databinding.FragmentHomeBinding
 import com.example.inflationcalculator.utill.Utill
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
@@ -35,13 +35,20 @@ class HomeFragment : Fragment() {
             inflater, R.layout.fragment_home,
             container, false
         )
+
+        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
+        viewModel.historicalInflationData.observe(viewLifecycleOwner, Observer {
+            Log.d("HistoricalData", it.toString())
+        })
+
         val listener = View.OnClickListener { view ->
             val button = view as Button
             binding.initialAmountEditText.append(button.text.toString())
             number += button.text.toString()
             Log.d("Home Fragment", number)
         }
-
+        
         binding.currencyNameTextView.setOnClickListener {
 
         }
@@ -77,7 +84,6 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
